@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import de.namics.agutheil.example.api.MessageProvider;
 import de.namics.agutheil.example.api.Printer;
-import de.namics.agutheil.example.impl.DefaultApplicationConfiguration;
+import de.namics.agutheil.example.core.DefaultApplicationConfiguration;
 
 @Configuration
 public class HelloWorld {

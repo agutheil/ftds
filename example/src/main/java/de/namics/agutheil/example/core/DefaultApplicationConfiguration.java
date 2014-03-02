@@ -1,29 +1,31 @@
-package de.namics.agutheil.example.impl;
+package de.namics.agutheil.example.core;
 
 import java.io.PrintStream;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import de.namics.agutheil.example.api.MessageProvider;
 import de.namics.agutheil.example.api.MessageProviderFactory;
-import de.namics.agutheil.example.api.Printer;
 import de.namics.agutheil.example.api.PrinterFactory;
+import de.namics.agutheil.example.impl.DefaultMessageProviderFactory;
+import de.namics.agutheil.example.impl.DefaultPrinterFactory;
 
 @Configuration
 public class DefaultApplicationConfiguration {
-	@Bean
-	MessageProvider messageProvider(){
-		return messageProviderFactory().createMessageProvider();
-	}
-	@Bean
-	Printer printer(){
-		return printerFactory().createPrinter();
+
+	@Bean(name="messageProvider")
+	SpringMessageProviderFactoryBean springMessageProviderFactoryBean() {
+		return new SpringMessageProviderFactoryBean(messageProviderFactory());
 	}
 	
 	@Bean
 	MessageProviderFactory messageProviderFactory(){
 		return new DefaultMessageProviderFactory(message());
+	}
+	
+	@Bean(name="printer")
+	SpringPrinterFactoryBean springPrinterFactoryBean() {
+		return new SpringPrinterFactoryBean(printerFactory());
 	}
 	
 	@Bean
