@@ -1,5 +1,7 @@
 package de.namics.agutheil.example.client;
 
+import java.io.PrintStream;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,11 +30,16 @@ public class ApplicationConfiguration {
 	
 	@Bean
 	PrinterFactory printerFactory(){
-		return new DefaultPrinterFactory();
+		return new DefaultPrinterFactory(printStream());
 	}
 	
 	@Bean
 	String message(){
 		return "Hello World";
+	}
+	
+	@Bean 
+	PrintStream printStream(){
+		return System.out;
 	}
 }
