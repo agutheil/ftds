@@ -6,7 +6,7 @@ import de.namics.agutheil.example.api.Printer;
 class DefaultPrinter implements Printer {
 
 	public void print(MessageProvider messageProvider) {
-		System.out.println(messageProvider.getMessage().toUpperCase());
+		System.out.println(messageProvider.getMessage());
 	}
 
 }
