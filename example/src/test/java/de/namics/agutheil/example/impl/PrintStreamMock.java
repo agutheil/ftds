@@ -4,12 +4,20 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 
 public class PrintStreamMock extends PrintStream {
-	public PrintStreamMock(OutputStream out) {
-		super(out);
-	}
-
+	private OutputStream outputStream;
 	private boolean called = false;
 	private String value;
+	
+	public OutputStream getOutputStream() {
+		return outputStream;
+	}
+
+	public PrintStreamMock(OutputStream out) {
+		super(out);
+		outputStream = out;
+	}
+
+	
 	public boolean isCalled() {
 		return called;
 	}

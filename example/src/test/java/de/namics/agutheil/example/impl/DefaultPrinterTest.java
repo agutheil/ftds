@@ -2,7 +2,6 @@ package de.namics.agutheil.example.impl;
 
 import static org.junit.Assert.*;
 
-import java.io.PrintStream;
 
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ public class DefaultPrinterTest {
 
 	@Test
 	public void test() {
-		final String message = "test";
+		final String message = "Hello World Test";
 		PrintStreamMock ps = new PrintStreamMock(System.out);
 		DefaultPrinter printer = new DefaultPrinter(ps);
 		printer.print(new MessageProvider() {

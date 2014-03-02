@@ -16,5 +16,9 @@ class DefaultPrinter implements Printer {
 	public void print(MessageProvider messageProvider) {
 		output.println(messageProvider.getMessage());
 	}
+	
+	PrintStream getOutput() {
+		return output;
+	}
 
 }
