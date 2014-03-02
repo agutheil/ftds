@@ -1,9 +1,9 @@
-package de.namics.agutheil.example.impl;
+package de.namics.agutheil.example.core.impl;
 
 import java.io.PrintStream;
 
-import de.namics.agutheil.example.api.MessageProvider;
-import de.namics.agutheil.example.api.Printer;
+import de.namics.agutheil.example.core.api.MessageProvider;
+import de.namics.agutheil.example.core.api.Printer;
 
 class DefaultPrinter implements Printer {
 

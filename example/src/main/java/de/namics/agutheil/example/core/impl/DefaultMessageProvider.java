@@ -1,6 +1,6 @@
-package de.namics.agutheil.example.impl;
+package de.namics.agutheil.example.core.impl;
 
-import de.namics.agutheil.example.api.MessageProvider;
+import de.namics.agutheil.example.core.api.MessageProvider;
 
 class DefaultMessageProvider implements MessageProvider {
 	private String message;

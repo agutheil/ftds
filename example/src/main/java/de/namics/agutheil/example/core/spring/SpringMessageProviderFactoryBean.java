@@ -1,12 +1,12 @@
-package de.namics.agutheil.example.core;
+package de.namics.agutheil.example.core.spring;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.namics.agutheil.example.api.MessageProvider;
-import de.namics.agutheil.example.api.MessageProviderFactory;
+import de.namics.agutheil.example.core.api.MessageProvider;
+import de.namics.agutheil.example.core.api.MessageProviderFactory;
 @Component("messageProvider")
 public class SpringMessageProviderFactoryBean implements FactoryBean<MessageProvider>, InitializingBean{
 	private MessageProvider messageProvider;

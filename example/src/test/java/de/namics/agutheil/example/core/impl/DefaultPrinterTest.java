@@ -1,11 +1,11 @@
-package de.namics.agutheil.example.impl;
+package de.namics.agutheil.example.core.impl;
 
 import static org.junit.Assert.*;
 
 
 import org.junit.Test;
 
-import de.namics.agutheil.example.api.MessageProvider;
+import de.namics.agutheil.example.core.api.MessageProvider;
 
 public class DefaultPrinterTest {
 

@@ -1,12 +1,12 @@
-package de.namics.agutheil.example.core;
+package de.namics.agutheil.example.core.spring;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.namics.agutheil.example.api.Printer;
-import de.namics.agutheil.example.api.PrinterFactory;
+import de.namics.agutheil.example.core.api.Printer;
+import de.namics.agutheil.example.core.api.PrinterFactory;
 @Component("printer")
 public class SpringPrinterFactoryBean implements FactoryBean<Printer>, InitializingBean {
 	private Printer printer;

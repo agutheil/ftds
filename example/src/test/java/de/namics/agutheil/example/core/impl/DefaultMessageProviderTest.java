@@ -1,4 +1,4 @@
-package de.namics.agutheil.example.impl;
+package de.namics.agutheil.example.core.impl;
 
 import static org.junit.Assert.*;
 

@@ -1,10 +1,10 @@
-package de.namics.agutheil.example.impl;
+package de.namics.agutheil.example.core.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.namics.agutheil.example.api.MessageProvider;
-import de.namics.agutheil.example.api.MessageProviderFactory;
+import de.namics.agutheil.example.core.api.MessageProvider;
+import de.namics.agutheil.example.core.api.MessageProviderFactory;
 
 @Component("messageProviderFactory")
 public class DefaultMessageProviderFactory implements MessageProviderFactory{
