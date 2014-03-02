@@ -23,11 +23,16 @@ public class ApplicationConfiguration {
 	
 	@Bean
 	MessageProviderFactory messageProviderFactory(){
-		return new DefaultMessageProviderFactory("Hello World");
+		return new DefaultMessageProviderFactory(message());
 	}
 	
 	@Bean
 	PrinterFactory printerFactory(){
 		return new DefaultPrinterFactory();
+	}
+	
+	@Bean
+	String message(){
+		return "Hello World";
 	}
 }
