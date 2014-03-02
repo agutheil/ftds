@@ -1,4 +1,4 @@
-package de.namics.agutheil.example;
+package de.namics.agutheil.example.client;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 
 import de.namics.agutheil.example.api.MessageProvider;
 import de.namics.agutheil.example.api.Printer;
-import de.namics.agutheil.example.config.ApplicationConfiguration;
 
 @Configuration
 public class HelloWorld {
