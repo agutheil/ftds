@@ -1,5 +1,8 @@
 package de.agutheil.ftds.example.helloworld;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class HelloWorld {
 
 	public static void main(String[] args) {
@@ -8,23 +11,11 @@ public class HelloWorld {
 			System.exit(1);
 		}
 		
-		String message = args[0];
-		
-		MessageProvider messageProvider = messageProvider(message);
-		MessagePrinter messagePrinter = messagePrinter(messageProvider);
+		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
+		MessageProvider messageProvider = context.getBean("messageProvider",MessageProvider.class);
+		MessagePrinter messagePrinter = context.getBean("messagePrinter",MessagePrinter.class);
 		messagePrinter.printMessage();
 	}
 
-	private static MessagePrinter messagePrinter(MessageProvider messageProvider) {
-		DefaultMessagePrinter printer = new DefaultMessagePrinter();
-		printer.setMessageProvider(messageProvider);
-		printer.setOutput(System.out);
-		return printer;
-	}
-
-	private static MessageProvider messageProvider(String message) {
-		DefaultMessageProvider provider = new DefaultMessageProvider(message);
-		return provider;
-	}
 
 }
