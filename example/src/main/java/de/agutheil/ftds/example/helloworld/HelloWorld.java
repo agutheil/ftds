@@ -13,7 +13,6 @@ public class HelloWorld {
 		context.register(ApplicationConfiguration.class);
 		context.refresh();
 		
-		MessageProvider messageProvider = context.getBean("messageProvider",MessageProvider.class);
 		MessagePrinter messagePrinter = context.getBean("messagePrinter",MessagePrinter.class);
 		messagePrinter.printMessage();
 	}
