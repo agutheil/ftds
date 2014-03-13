@@ -7,7 +7,9 @@ public class HelloWorld {
 			System.err.println("Keine Nachricht uebergeben!");
 			System.exit(1);
 		}
-		String message = args[0];
+		
+		Message message = new Message(args[0]);
+		
 		System.out.println(message);
 
 	}
