@@ -1,10 +1,15 @@
 package de.agutheil.ftds.example.helloworld;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 
 @Configuration
 public class ApplicationConfiguration {
+	@Autowired
+	Environment env;
+	
 	@Bean
 	MessagePrinter messagePrinter(MessageProvider messageProvider) {
 		DefaultMessagePrinter printer = new DefaultMessagePrinter();
@@ -21,6 +26,6 @@ public class ApplicationConfiguration {
 	
 	@Bean
 	String message(){
-		return "Hello World!";
+		return env.getProperty("message");
 	}
 }
