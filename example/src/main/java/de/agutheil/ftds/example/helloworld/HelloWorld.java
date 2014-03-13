@@ -8,22 +8,23 @@ public class HelloWorld {
 			System.exit(1);
 		}
 		
-		Message message = new Message(args[0]);
+		String message = args[0];
 		
 		MessageProvider messageProvider = messageProvider(message);
 		MessagePrinter messagePrinter = messagePrinter(messageProvider);
 		messagePrinter.printMessage();
-
 	}
 
 	private static MessagePrinter messagePrinter(MessageProvider messageProvider) {
-		// TODO Auto-generated method stub
-		return null;
+		DefaultMessagePrinter printer = new DefaultMessagePrinter();
+		printer.setMessageProvider(messageProvider);
+		printer.setOutput(System.out);
+		return printer;
 	}
 
-	private static MessageProvider messageProvider(Message message) {
-		// TODO Auto-generated method stub
-		return null;
+	private static MessageProvider messageProvider(String message) {
+		DefaultMessageProvider provider = new DefaultMessageProvider(message);
+		return provider;
 	}
 
 }
