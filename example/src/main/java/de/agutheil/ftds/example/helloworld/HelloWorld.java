@@ -10,8 +10,20 @@ public class HelloWorld {
 		
 		Message message = new Message(args[0]);
 		
-		System.out.println(message);
+		MessageProvider messageProvider = messageProvider(message);
+		MessagePrinter messagePrinter = messagePrinter(messageProvider);
+		messagePrinter.printMessage();
 
+	}
+
+	private static MessagePrinter messagePrinter(MessageProvider messageProvider) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private static MessageProvider messageProvider(Message message) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
