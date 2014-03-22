@@ -1,6 +1,6 @@
 package de.agutheil.ftds.example.solid.dip;
 
-public class CopyDIP {
+public class CopyDIP implements CopyApplication {
 	private ReadableInput readableInput;
 	private PrintableOutput printableOutput;
 	

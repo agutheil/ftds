@@ -4,10 +4,10 @@ public class Copy {
 	private KeyboardReader keyboardReader;
 	private PrinterWriter printerWriter;
 	
-	public Copy(KeyboardReader keyboardReader, PrinterWriter printerWriter) {
+	public Copy() {
 		super();
-		this.keyboardReader = keyboardReader;
-		this.printerWriter = printerWriter;
+		this.keyboardReader = new KeyboardReader();
+		this.printerWriter = new PrinterWriter();
 	}
 	
 	public void readAndPrint(){
