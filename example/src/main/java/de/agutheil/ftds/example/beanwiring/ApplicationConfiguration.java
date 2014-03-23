@@ -91,7 +91,7 @@ public class ApplicationConfiguration {
 		return new Child();
 	}
 	
-	@Bean 
+	@Bean(name="contextAwareCartService") 
 	CartService cartService() {
 		return new DefaultCartService();
 	}
@@ -100,6 +100,18 @@ public class ApplicationConfiguration {
 	@Scope("prototype")
 	Cart cart() {
 		return new Cart();
+	}
+	
+	@Bean(name="cartService")
+	CartService lookupCartService() {
+		return new LookupMethodCartService() {
+			
+			@Override
+			public Cart createCart() {
+				System.out.println("creating Cart in lookup method");
+				return cart();
+			}
+		};
 	}
 
 	
