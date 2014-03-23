@@ -2,8 +2,6 @@ package de.agutheil.ftds.example.helloworld;
 
 import java.io.PrintStream;
 
-import org.springframework.stereotype.Component;
-
 public class DefaultMessagePrinter implements MessagePrinter {
 	private PrintStream output;
 
