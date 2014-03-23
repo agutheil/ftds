@@ -1,5 +1,6 @@
 package de.agutheil.ftds.example.beanwiring;
 
+import java.awt.Color;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -8,6 +9,8 @@ import java.security.NoSuchAlgorithmException;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 @Configuration
 public class ApplicationConfiguration {
@@ -38,6 +41,24 @@ public class ApplicationConfiguration {
 		return new URL("http://www.hs-rm.de");
 	}
 	
+	@Bean 
+	Circle yellowCircle(){
+		Circle circle = circle();
+		circle.setColor(Color.YELLOW);
+		return circle;
+	}
 	
+	@Bean 
+	Circle blueCircle(){
+		Circle circle = circle();
+		circle.setColor(Color.BLUE);
+		return circle;
+	}
+	
+	Circle circle(){
+		Circle circle = new Circle();
+		circle.setRadius(15);
+		return circle;
+	}
 	
 }

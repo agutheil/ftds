@@ -8,9 +8,14 @@ public class Application {
 
 	public static void main(String[] args) throws IOException {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
-		MyService myURLConnectionService = context.getBean("myURLConnectionService", MyService.class);
-		System.out.println(myURLConnectionService);
-		// tu was
+		
+		
+		Circle yellowCircle = context.getBean("yellowCircle", Circle.class);
+		Circle blueCircle = context.getBean("blueCircle", Circle.class);
+		
+		System.out.println(yellowCircle);
+		System.out.println(blueCircle);
+		
 	}
 
 }
