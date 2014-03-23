@@ -9,8 +9,8 @@ import java.security.NoSuchAlgorithmException;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.Lazy;
 
 @Configuration
 public class ApplicationConfiguration {
@@ -60,5 +60,35 @@ public class ApplicationConfiguration {
 		circle.setRadius(15);
 		return circle;
 	}
+	
+	@Bean
+	@DependsOn(value={"two"})
+	One one(){
+		return new One();
+	}
+	
+	@Bean 
+	@DependsOn(value={"three"})
+	Two two() {
+		return new Two();
+	}
+	
+	@Bean 
+	Three three() {
+		return new Three();
+	}
+	
+	@Bean
+	Parent parent() {
+		Parent parent = new Parent();
+		return parent;
+	}
+	
+	@Bean
+	@Lazy
+	Child child() {
+		return new Child();
+	}
+
 	
 }

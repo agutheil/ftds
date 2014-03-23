@@ -9,13 +9,11 @@ public class Application {
 	public static void main(String[] args) throws IOException {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
 		
-		
-		Circle yellowCircle = context.getBean("yellowCircle", Circle.class);
-		Circle blueCircle = context.getBean("blueCircle", Circle.class);
-		
-		System.out.println(yellowCircle);
-		System.out.println(blueCircle);
-		
+		Parent parent = context.getBean("parent", Parent.class);
+		System.out.println("Now getting child ...");
+		Child child = context.getBean("child", Child.class);
+		parent.setChild(child);
+		parent.askChildToSayHi();
 	}
 
 }
