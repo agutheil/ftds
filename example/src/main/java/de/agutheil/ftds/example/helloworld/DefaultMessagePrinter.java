@@ -8,12 +8,6 @@ public class DefaultMessagePrinter implements MessagePrinter {
 	private PrintStream output;
 
 	private MessageProvider messageProvider;
-	
-	@Override
-	public void printMessage() {
-		output.println(messageProvider.getMessage());
-
-	}
 
 	@Override
 	public void setMessageProvider(MessageProvider messageProvider) {
@@ -22,6 +16,12 @@ public class DefaultMessagePrinter implements MessagePrinter {
 	
 	public void setOutput(PrintStream output) {
 		this.output = output;
+	}
+	
+	@Override
+	public void printMessage() {
+		output.println(messageProvider.getMessage());
+
 	}
 
 }
