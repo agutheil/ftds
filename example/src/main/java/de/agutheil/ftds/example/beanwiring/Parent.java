@@ -5,7 +5,7 @@ public class Parent {
 
 	public Parent() {
 		super();
-		System.out.println(Parent.class + "initialized");
+		System.out.println(Parent.class + " initialized");
 	}
 
 	public void setChild(Child child) {

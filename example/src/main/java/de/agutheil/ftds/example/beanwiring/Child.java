@@ -4,7 +4,7 @@ public class Child {
 
 	public Child() {
 		super();
-		System.out.println(Child.class + "initialized");
+		System.out.println(Child.class + " initialized");
 	}
 	
 	public void sayHi() {
