@@ -1,5 +1,7 @@
 package de.agutheil.ftds.example.beanwiring;
 
-public class MyServiceImplementation implements MyService {
+import java.net.URLConnection;
 
+public class MyServiceImplementation implements MyService {
+	
 }
