@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 @Configuration
 public class ApplicationConfiguration {
@@ -97,12 +98,19 @@ public class ApplicationConfiguration {
 	}
 	
 	@Bean
-	@Scope("prototype")
+	@Scope(value="prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
 	Cart cart() {
 		return new Cart();
 	}
 	
 	@Bean(name="cartService")
+	CartService scopeCartService(Cart cart) {
+		ScopedCartService scopedCartService = new ScopedCartService();
+		scopedCartService.setCart(cart);
+		return scopedCartService;
+	}
+	
+	@Bean(name="lookUpCartService")
 	CartService lookupCartService() {
 		return new LookupMethodCartService() {
 			
