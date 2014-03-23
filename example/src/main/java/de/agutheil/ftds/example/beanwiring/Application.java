@@ -9,7 +9,7 @@ public class Application {
 	public static void main(String[] args) throws IOException {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
 		MyService myURLConnectionService = context.getBean("myURLConnectionService", MyService.class);
-		System.err.println(myURLConnectionService);
+		System.out.println(myURLConnectionService);
 		// tu was
 	}
 

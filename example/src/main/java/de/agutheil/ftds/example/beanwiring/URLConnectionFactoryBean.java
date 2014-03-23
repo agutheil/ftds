@@ -8,7 +8,7 @@ import org.springframework.beans.factory.InitializingBean;
 
 public class URLConnectionFactoryBean implements FactoryBean<URLConnection>, InitializingBean {
 	
-	private String url;
+	private URL url;
 	private URLConnection urlConnection;
 	
 
@@ -29,10 +29,10 @@ public class URLConnectionFactoryBean implements FactoryBean<URLConnection>, Ini
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		urlConnection = new URL(url).openConnection();
+		urlConnection = url.openConnection();
 	}
 
-	public void setUrl(String url) {
+	public void setUrl(URL url) {
 		this.url = url;
 	}
 }

@@ -1,5 +1,7 @@
 package de.agutheil.ftds.example.beanwiring;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.net.URLConnection;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -25,9 +27,17 @@ public class ApplicationConfiguration {
 	}
 	
 	@Bean
-	URLConnectionFactoryBean urlConnection() {
+	URLConnectionFactoryBean urlConnection(URL hsrmUrl) {
 		URLConnectionFactoryBean ucfb = new URLConnectionFactoryBean();
-		ucfb.setUrl("http://www.hs-rm.de");
+		ucfb.setUrl(hsrmUrl);
 		return ucfb;
 	}
+	
+	@Bean
+	URL hsrmUrl() throws MalformedURLException{
+		return new URL("http://www.hs-rm.de");
+	}
+	
+	
+	
 }
