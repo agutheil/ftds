@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class ApplicationConfiguration {
@@ -88,6 +89,17 @@ public class ApplicationConfiguration {
 	@Lazy
 	Child child() {
 		return new Child();
+	}
+	
+	@Bean 
+	CartService cartService() {
+		return new DefaultCartService();
+	}
+	
+	@Bean
+	@Scope("prototype")
+	Cart cart() {
+		return new Cart();
 	}
 
 	
